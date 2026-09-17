@@ -1,0 +1,130 @@
+[
+ {
+  "name": "Zugspitze",
+  "kind": "peak",
+  "lat": 47.421,
+  "lon": 10.985,
+  "col": 369.4,
+  "row": 848.0
+ },
+ {
+  "name": "Alps",
+  "kind": "range",
+  "lat": 47.55,
+  "lon": 11.3,
+  "col": 392.8,
+  "row": 833.0
+ },
+ {
+  "name": "Black Forest",
+  "kind": "range",
+  "lat": 47.874,
+  "lon": 8.004,
+  "col": 145.2,
+  "row": 799.0
+ },
+ {
+  "name": "Harz",
+  "kind": "range",
+  "lat": 51.799,
+  "lon": 10.615,
+  "col": 331.1,
+  "row": 361.7
+ },
+ {
+  "name": "Erzgebirge",
+  "kind": "range",
+  "lat": 50.429,
+  "lon": 12.954,
+  "col": 500.6,
+  "row": 507.9
+ },
+ {
+  "name": "Bavarian Forest",
+  "kind": "range",
+  "lat": 49.112,
+  "lon": 13.136,
+  "col": 521.6,
+  "row": 653.6
+ },
+ {
+  "name": "Thuringian Forest",
+  "kind": "range",
+  "lat": 50.659,
+  "lon": 10.746,
+  "col": 343.1,
+  "row": 488.3
+ },
+ {
+  "name": "Rhoen",
+  "kind": "range",
+  "lat": 50.498,
+  "lon": 9.938,
+  "col": 286.2,
+  "row": 507.3
+ },
+ {
+  "name": "Sauerland",
+  "kind": "range",
+  "lat": 51.18,
+  "lon": 8.49,
+  "col": 184.0,
+  "row": 431.7
+ },
+ {
+  "name": "Berlin",
+  "kind": "city",
+  "lat": 52.52,
+  "lon": 13.405,
+  "col": 518.6,
+  "row": 273.6
+ },
+ {
+  "name": "Hamburg",
+  "kind": "city",
+  "lat": 53.55,
+  "lon": 9.99,
+  "col": 285.3,
+  "row": 167.7
+ },
+ {
+  "name": "Munich",
+  "kind": "city",
+  "lat": 48.137,
+  "lon": 11.575,
+  "col": 411.3,
+  "row": 767.1
+ },
+ {
+  "name": "Cologne",
+  "kind": "city",
+  "lat": 50.937,
+  "lon": 6.96,
+  "col": 76.3,
+  "row": 456.9
+ },
+ {
+  "name": "Frankfurt",
+  "kind": "city",
+  "lat": 50.11,
+  "lon": 8.68,
+  "col": 196.8,
+  "row": 550.8
+ },
+ {
+  "name": "Magdeburg",
+  "kind": "city",
+  "lat": 52.13,
+  "lon": 11.63,
+  "col": 399.7,
+  "row": 322.9
+ },
+ {
+  "name": "Dresden",
+  "kind": "city",
+  "lat": 51.05,
+  "lon": 13.74,
+  "col": 552.0,
+  "row": 435.6
+ }
+]

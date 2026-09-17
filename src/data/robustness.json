@@ -1,0 +1,184 @@
+{
+ "generated": "scripts/robustness.py",
+ "lastTen": {
+  "from": 2016,
+  "to": 2025,
+  "mean": 19.64
+ },
+ "slicings": [
+  {
+   "label": "The WMO periods, used here",
+   "a": [
+    1961,
+    1990
+   ],
+   "b": [
+    1991,
+    2020
+   ],
+   "then": 47.5,
+   "now": 31.5,
+   "fall": 0.336
+  },
+  {
+   "label": "The freshest thirty against the thirty before",
+   "a": [
+    1966,
+    1995
+   ],
+   "b": [
+    1996,
+    2025
+   ],
+   "then": 43.2,
+   "now": 30.2,
+   "fall": 0.302
+  },
+  {
+   "label": "The WMO reference against the freshest thirty",
+   "a": [
+    1961,
+    1990
+   ],
+   "b": [
+    1996,
+    2025
+   ],
+   "then": 47.5,
+   "now": 30.2,
+   "fall": 0.365
+  },
+  {
+   "label": "The first thirty years against the last thirty",
+   "a": [
+    1951,
+    1980
+   ],
+   "b": [
+    1996,
+    2025
+   ],
+   "then": 46.8,
+   "now": 30.2,
+   "fall": 0.355
+  },
+  {
+   "label": "Shifted five years back",
+   "a": [
+    1956,
+    1985
+   ],
+   "b": [
+    1986,
+    2015
+   ],
+   "then": 47.9,
+   "now": 34.5,
+   "fall": 0.278
+  },
+  {
+   "label": "The record split at the break",
+   "a": [
+    1951,
+    1987
+   ],
+   "b": [
+    1988,
+    2025
+   ],
+   "then": 48.3,
+   "now": 29.2,
+   "fall": 0.395
+  }
+ ],
+ "fallRange": [
+  0.278,
+  0.395
+ ],
+ "allPairs": {
+  "count": 136,
+  "min": {
+   "a": [
+    1951,
+    1980
+   ],
+   "b": [
+    1981,
+    2010
+   ],
+   "fall": 0.181
+  },
+  "max": {
+   "a": [
+    1958,
+    1987
+   ],
+   "b": [
+    1996,
+    2025
+   ],
+   "fall": 0.387
+  }
+ },
+ "over365": {
+  "cells": 4,
+  "years": 6,
+  "cellYears": 12,
+  "meanCapped": {
+   "1961-1990": 47.52,
+   "1991-2020": 31.54
+  },
+  "meanAsPublished": {
+   "1961-1990": 47.52,
+   "1991-2020": 31.54
+  }
+ },
+ "cells": {
+  "compared": 358303,
+  "fell": 358300,
+  "rose": 3,
+  "unchanged": 0,
+  "medianFall": 15.3
+ },
+ "percentiles": [
+  {
+   "percentile": 10,
+   "then": 24.8,
+   "now": 12.4,
+   "fall": 0.499
+  },
+  {
+   "percentile": 50,
+   "then": 41.1,
+   "now": 25.4,
+   "fall": 0.381
+  },
+  {
+   "percentile": 90,
+   "then": 75.7,
+   "now": 56.1,
+   "fall": 0.26
+  },
+  {
+   "percentile": 99,
+   "then": 135.1,
+   "now": 113.0,
+   "fall": 0.164
+  }
+ ],
+ "sameCells": {
+  "driestTenth": {
+   "cells": 35896,
+   "then": 20.6,
+   "now": 9.9,
+   "fall": 0.519
+  },
+  "snowiestHundredth": {
+   "cells": 3584,
+   "then": 173.6,
+   "now": 150.4,
+   "fall": 0.134,
+   "shareInAlpineRows": 0.847
+  }
+ }
+}

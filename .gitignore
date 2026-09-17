@@ -1,0 +1,15 @@
+node_modules
+dist
+.DS_Store
+*.local
+
+# raw downloads: rebuilt by scripts/download.sh, about 30 MB
+raw/
+
+# editor and tool config
+.claude/
+
+# jupyter and anaconda leftovers
+.ipynb_checkpoints/
+anaconda_projects/
+__pycache__/

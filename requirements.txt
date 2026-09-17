@@ -1,0 +1,8 @@
+# Python side of the project. Install with:
+#   pip install -r requirements.txt
+
+numpy>=1.24          # every script
+scipy>=1.10          # smoothing (ndimage) and the statistical tests
+matplotlib>=3.7      # the notebooks only
+jupyterlab>=4.0      # the notebooks only
+pyproj>=3.5          # scripts/gridcells.py only, to place a station in the grid

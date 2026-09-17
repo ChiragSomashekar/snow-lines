@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;0,9..144,640;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+/* CSS mirror of src/tokens.js, keep the two in sync by hand */
+:root {
+  --paper: #f7f3ec;
+  --ink: #21201c;
+  --muted: #6f675c;
+  --grid: #8b8378;
+  --accent: #b5432e;
+  --accent-text: #a33a27;
+  --display: "Fraunces", Georgia, serif;
+  --body: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+.stage {
+  background: var(--paper);
+  outline: 1px solid color-mix(in srgb, var(--muted) 25%, transparent);
+  padding: 34px 38px 26px;
+}
+
+.stage-head {
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: var(--display);
+  font-size: 2.6rem;
+  font-weight: 560;
+  font-variation-settings: "opsz" 90;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-top: 6px;
+}
+
+.dek {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 68ch;
+  margin: 8px 0 0;
+}
+
+/* how to read it, set quieter than the finding above it */
+.dek.how {
+  font-size: 0.85rem;
+  color: var(--grid);
+  margin-top: 10px;
+}
+
+.source {
+  margin-top: 14px;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 72ch;
+  font-variant-numeric: tabular-nums;
+}
+
+.loading {
+  padding: 80px 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+svg text {
+  font-family: var(--body);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 12px 8px;
+  }
+  .stage {
+    padding: 20px 16px 18px;
+  }
+  h1 {
+    font-size: 1.9rem;
+  }
+}
+
+.kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.source a,
+.method a {
+  color: var(--ink);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.source a {
+  color: var(--accent-text);
+}
+
+/* the two maps side by side, stacked on a phone; each panel is its own drawing */
+.poster-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 8px;
+  align-items: start;
+}
+.poster-grid svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 640px) {
+  .poster-grid {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+}
+
+/* method page: a readable column, quiet tables */
+main.method {
+  max-width: 980px;
+}
+.method h2 {
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 560;
+  line-height: 1.15;
+  margin: 48px 0 10px;
+}
+.method p,
+.method li {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 72ch;
+}
+.method ul {
+  padding-left: 1.2em;
+}
+.method li {
+  margin-bottom: 8px;
+}
+.method table {
+  border-collapse: collapse;
+  margin: 14px 0 6px;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+.method th,
+.method td {
+  text-align: right;
+  padding: 6px 14px 6px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--muted) 25%, transparent);
+  vertical-align: bottom;
+}
+.method th {
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.method td:first-child,
+.method th:first-child {
+  text-align: left;
+}
+.method .source {
+  margin-top: 8px;
+}
+@media (max-width: 640px) {
+  .method table {
+    width: 100%;
+    font-size: 0.78rem;
+  }
+  .method th,
+  .method td {
+    padding: 5px 6px 5px 0;
+  }
+  .method th {
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+  }
+  .method td:not(:first-child) {
+    white-space: nowrap;
+  }
+}
