@@ -2,11 +2,11 @@
 
 Seventy-five years of snow in Germany, drawn as terrain. Data: Deutscher Wetterdienst, 1 km grids of snow cover days, 1951 to 2025.
 
-![Where did Germany's snow go?](public/og.png)
+![Where did Germany's snow go?](images/poster.png)
 
 ## Open it
 
-- [The poster](https://chiragsomashekar.github.io/snow-lines/). 1961 to 1990 next to 1991 to 2020. Point anywhere on a map to read a value.
+- [The poster](https://chiragsomashekar.github.io/snow-lines/). 1961 to 1990 next to 1991 to 2020. It is interactive: point anywhere on a map, or tap on a phone, and the line under your finger lights up with its number and the nearest place.
 - [How this was made](https://chiragsomashekar.github.io/snow-lines/?method). What is counted, every year as a bar, and nine weather stations against the map.
 
 ## Good to know
