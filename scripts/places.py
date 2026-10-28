@@ -64,8 +64,8 @@ for name, kind, nnid in PLACES:
         source = source + f" ({row['HOEHE']} m)"
 
     places.append({"name": name, "kind": kind, "lat": round(lat, 4), "lon": round(lon, 4),
-                   "col": round(col, 1), "row": round(row_number, 1), "source": source})
-    print(f"{name:18s} {row['NAME']:18s} row {round(row_number, 1)}, col {round(col, 1)}")
+                   "col": round(col, 3), "row": round(row_number, 3), "source": source})  # to the metre
+    print(f"{name:18s} {row['NAME']:18s} row {round(row_number, 3)}, col {round(col, 3)}")
 
 with open("src/data/places.json", "w") as f:
     json.dump(places, f, indent=1, ensure_ascii=False)
