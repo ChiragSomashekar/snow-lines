@@ -1,0 +1,146 @@
+[
+ {
+  "name": "Zugspitze",
+  "kind": "peak",
+  "lat": 47.4211,
+  "lon": 10.9864,
+  "col": 369.5,
+  "row": 848.0,
+  "source": "BKG GN250 DEBKGGND00002I7K Zugspitze (2962 m)"
+ },
+ {
+  "name": "Alps",
+  "kind": "range",
+  "lat": 47.5321,
+  "lon": 11.1081,
+  "col": 378.4,
+  "row": 835.4,
+  "source": "BKG GN250 DEBKGGND00000YQK Bayerische Alpen (2961 m)"
+ },
+ {
+  "name": "Black Forest",
+  "kind": "range",
+  "lat": 47.8736,
+  "lon": 8.0039,
+  "col": 145.1,
+  "row": 799.1,
+  "source": "BKG GN250 DEBKGGND00002JCX Feldberg (1493 m)"
+ },
+ {
+  "name": "Harz",
+  "kind": "range",
+  "lat": 51.7989,
+  "lon": 10.6153,
+  "col": 331.1,
+  "row": 361.7,
+  "source": "BKG GN250 DEBKGGND00002JHG Brocken (1141 m)"
+ },
+ {
+  "name": "Erzgebirge",
+  "kind": "range",
+  "lat": 50.4286,
+  "lon": 12.9536,
+  "col": 500.5,
+  "row": 507.9,
+  "source": "BKG GN250 DEBKGGND00002GN0 Fichtelberg (1215 m)"
+ },
+ {
+  "name": "Bavarian Forest",
+  "kind": "range",
+  "lat": 49.1122,
+  "lon": 13.1358,
+  "col": 521.6,
+  "row": 653.6,
+  "source": "BKG GN250 DEBKGGND00002IE9 Großer Arber (1456 m)"
+ },
+ {
+  "name": "Thuringian Forest",
+  "kind": "range",
+  "lat": 50.6583,
+  "lon": 10.7433,
+  "col": 342.9,
+  "row": 488.4,
+  "source": "BKG GN250 DEBKGGND00002ITF Großer Beerberg (983 m)"
+ },
+ {
+  "name": "Rhön",
+  "kind": "range",
+  "lat": 50.4975,
+  "lon": 9.9356,
+  "col": 286.0,
+  "row": 507.3,
+  "source": "BKG GN250 DEBKGGND00002JXU Wasserkuppe (950 m)"
+ },
+ {
+  "name": "Sauerland",
+  "kind": "range",
+  "lat": 51.1794,
+  "lon": 8.4889,
+  "col": 183.9,
+  "row": 431.8,
+  "source": "BKG GN250 DEBKGGND00002JES Kahler Asten (841 m)"
+ },
+ {
+  "name": "Berlin",
+  "kind": "city",
+  "lat": 52.5177,
+  "lon": 13.4055,
+  "col": 518.6,
+  "row": 273.9,
+  "source": "BKG GN250 DEBKGGND00001B1U Berlin"
+ },
+ {
+  "name": "Hamburg",
+  "kind": "city",
+  "lat": 53.5507,
+  "lon": 9.997,
+  "col": 285.7,
+  "row": 167.6,
+  "source": "BKG GN250 DEBKGGND00003ESP Hamburg"
+ },
+ {
+  "name": "Munich",
+  "kind": "city",
+  "lat": 48.1434,
+  "lon": 11.5736,
+  "col": 411.2,
+  "row": 766.4,
+  "source": "BKG GN250 DEBKGGND00001J9R München"
+ },
+ {
+  "name": "Cologne",
+  "kind": "city",
+  "lat": 50.9381,
+  "lon": 6.9571,
+  "col": 76.1,
+  "row": 456.8,
+  "source": "BKG GN250 DEBKGGND00001BRY Köln"
+ },
+ {
+  "name": "Frankfurt",
+  "kind": "city",
+  "lat": 50.1109,
+  "lon": 8.6824,
+  "col": 196.9,
+  "row": 550.7,
+  "source": "BKG GN250 DEBKGGND00001FX6 Frankfurt am Main"
+ },
+ {
+  "name": "Magdeburg",
+  "kind": "city",
+  "lat": 52.1262,
+  "lon": 11.6327,
+  "col": 399.9,
+  "row": 323.3,
+  "source": "BKG GN250 DEBKGGND00001FK7 Magdeburg"
+ },
+ {
+  "name": "Dresden",
+  "kind": "city",
+  "lat": 51.0517,
+  "lon": 13.7369,
+  "col": 551.7,
+  "row": 435.4,
+  "source": "BKG GN250 DEBKGGND00001FWH Dresden"
+ }
+]

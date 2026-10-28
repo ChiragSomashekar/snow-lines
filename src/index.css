@@ -1,0 +1,481 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;0,9..144,640;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+/* same colours as src/tokens.js */
+:root {
+  --paper: #f7f3ec;
+  --ink: #21201c;
+  --muted: #6f675c;
+  --accent: #b5432e;
+  --accent-text: #a33a27;
+  --display: "Fraunces", Georgia, serif;
+  --body: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+.stage {
+  background: var(--paper);
+  outline: 1px solid color-mix(in srgb, var(--muted) 25%, transparent);
+  padding: 34px 38px 26px;
+}
+
+.stage-head {
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: var(--display);
+  font-size: 2.6rem;
+  font-weight: 560;
+  font-variation-settings: "opsz" 90;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+  margin-bottom: 12px;
+}
+
+.source {
+  margin-top: 14px;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 72ch;
+  font-variant-numeric: tabular-nums;
+}
+
+.loading {
+  padding: 80px 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+svg text {
+  font-family: var(--body);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 12px 8px;
+  }
+  .stage {
+    padding: 20px 16px 18px;
+  }
+  h1 {
+    font-size: 1.9rem;
+  }
+}
+
+.source a,
+.method a {
+  color: var(--ink);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.source a {
+  color: var(--accent-text);
+  white-space: nowrap; /* "dl-de/by-2-0" shouldn't break at a hyphen */
+}
+
+/* the map page: a framed stage, a caption per scene, back and next below */
+.steps-page {
+  max-width: 980px;
+  padding: 12px 16px 8px;
+}
+.steps-page .stage {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 26px 12px;
+}
+.steps-page .stage-head {
+  margin-bottom: 0;
+}
+.steps-page h1 {
+  font-size: 1.75rem;
+  margin-bottom: 4px;
+  text-wrap: balance;
+}
+.kicker {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 6px;
+}
+.caption-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  min-height: 58px;
+  padding-top: 10px;
+}
+.caption-cell {
+  display: grid;
+}
+.caption-cell > * {
+  grid-area: 1 / 1;
+}
+.caption.sizer {
+  visibility: hidden;
+}
+.caption {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  max-width: 44ch;
+  text-wrap: balance;
+  color: var(--ink);
+}
+.snowmap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+.map-fit {
+  flex: 1;
+  min-height: 0;
+}
+.canvas-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--ratio);
+  margin: 0 auto;
+}
+.canvas-wrap canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.map-svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  cursor: crosshair;
+  /* a tap reads; it shouldn't select a name or open the copy menu */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  /* sideways belongs to the map (reading, the slider); up/down still scrolls, two fingers still zoom */
+  touch-action: pan-y pinch-zoom;
+}
+.compare .map-svg {
+  cursor: ew-resize;
+}
+/* the reading: where (small), the number (serif), the change (quiet) */
+.reading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 4.2em;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.reading .where {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.reading .hint {
+  margin-top: 6px;
+  font-size: 0.7rem;
+  color: var(--muted);
+  opacity: 0.8;
+  animation: fade-in 0.6s ease-out 0.4s backwards;
+}
+.reading .now {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+/* the period above the map, in quiet grey */
+.map-period {
+  min-height: 1em;
+  margin: 12px 0 6px;
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 560;
+  line-height: 1;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  opacity: 0.32;
+  pointer-events: none;
+}
+.map-period span {
+  display: inline-block;
+}
+/* reading + legend: side by side under the map on a phone, in the left column on a wide screen */
+.under {
+  display: contents;
+}
+.legend-side {
+  display: block;
+  margin-top: 8px;
+  overflow: visible;
+  pointer-events: none;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.steps-page .source {
+  margin-top: 6px;
+  font-size: 0.68rem;
+  max-width: none;
+}
+/* no focus box on click or tap, a fine one for the keyboard */
+.map-svg:focus {
+  outline: none;
+}
+.map-svg:focus-visible {
+  outline: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  outline-offset: 4px;
+}
+
+/* back, the scene dots, next */
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.step-btn {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: var(--ink);
+  background: none;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  text-decoration: underline transparent;
+  text-underline-offset: 5px;
+  transition: text-decoration-color 0.18s;
+}
+.step-btn:hover { text-decoration-color: var(--ink); }
+.step-btn:focus-visible { outline: 1.5px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+.step-btn[aria-disabled="true"] { color: var(--muted); opacity: 0.45; cursor: default; text-decoration: none; }
+.dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.step-dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--muted);
+  opacity: 0.35;
+  cursor: pointer;
+  transition: transform 0.18s, opacity 0.18s, background 0.18s;
+}
+.step-dot.done { opacity: 1; background: var(--ink); }
+.step-dot.now { opacity: 1; background: var(--accent); transform: scale(1.4); }
+.step-dot:hover { opacity: 1; }
+.step-dot:focus-visible { outline: 1.5px solid var(--accent); outline-offset: 3px; }
+@media (pointer: coarse) {
+  .step-btn { padding: 12px 0; }
+  .dots { gap: 12px; }
+  .step-dot { width: 8px; height: 8px; }
+}
+
+/* wide screen: the stage fills the window, the map fits inside, no scrolling */
+@media (min-width: 700px) and (min-height: 560px) {
+  .steps-page .stage {
+    height: calc(100svh - 62px);
+  }
+  /* period, reading and legend in the empty space west of the map */
+  .snowmap {
+    position: relative;
+  }
+  .snowmap .map-period {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    margin: 0;
+    font-size: 2rem;
+  }
+  .snowmap .reading {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 250px;
+    margin: 0;
+    z-index: 1;
+  }
+  .legend-side {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+  }
+  .map-fit {
+    container-type: size;
+    display: flex;
+    justify-content: center;
+  }
+  .map-fit .canvas-wrap {
+    width: min(100cqw, calc(100cqh * var(--ratio)));
+  }
+}
+@media (max-width: 640px) {
+  .steps-page {
+    padding: 8px 8px 16px;
+  }
+  .steps-page .stage {
+    padding: 18px 14px 12px;
+    /* every scene fills the screen, so back and next don't move */
+    min-height: calc(100svh - 64px);
+  }
+  .steps-page h1 {
+    font-size: 1.45rem;
+  }
+  .caption-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .caption {
+    font-size: 1.12rem;
+  }
+  .reading {
+    min-height: 4.4em;
+    margin-top: 0;
+    font-size: 0.95rem;
+  }
+  /* scene 1's short window onto the line opens to the whole map in scene 2 */
+  .map-fit.windowed {
+    flex: none;
+    overflow-x: visible;
+    overflow-y: clip;
+    transition: height 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .map-fit.windowed .canvas-wrap {
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .snowmap .map-period {
+    font-size: 1.1rem;
+  }
+  .stepper {
+    font-size: 0.8rem;
+  }
+  /* under the map: reading left, legend right */
+  .under {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .under .reading {
+    flex: 1;
+    min-width: 0;
+  }
+  .under .legend-side {
+    flex: none;
+    margin: 2px 0 0;
+  }
+  /* the touch hint, readable */
+  .reading .hint.touch {
+    margin-top: 0;
+    font-size: 0.86rem;
+    line-height: 1.4;
+    color: var(--ink);
+    opacity: 0.8;
+  }
+  /* back and next stay at the bottom of the screen */
+  .stepper {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    margin: 0 -8px;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
+    background: var(--paper);
+    border-top: 1px solid color-mix(in srgb, var(--muted) 20%, transparent);
+  }
+}
+
+/* the method page */
+main.method {
+  max-width: 980px;
+}
+.method h2 {
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 560;
+  line-height: 1.15;
+  margin: 48px 0 10px;
+}
+.method p,
+.method li {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 72ch;
+}
+.method ul {
+  padding-left: 1.2em;
+}
+.method li {
+  margin-bottom: 8px;
+}
+.method .source {
+  margin-top: 8px;
+}
+
+/* names and notes fade in after the drawing */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+.fade-in.slow {
+  animation-duration: 0.9s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in, .reading .hint { animation: none; }
+  .map-fit.windowed, .map-fit.windowed .canvas-wrap { transition: none; }
+}

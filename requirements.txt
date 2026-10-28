@@ -1,0 +1,8 @@
+# for scripts/prepare.py and scripts/places.py
+numpy>=1.24
+pyproj>=3.6
+
+# for notebooks/the-data.ipynb
+pandas>=2.0
+matplotlib>=3.7
+jupyterlab>=4.0
