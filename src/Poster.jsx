@@ -60,9 +60,9 @@ export default function Poster() {
   const dropped = `Thirty years later, the same lines sit lower: ${after} snow days a year.`;
 
   const captions = [
-    "This line crosses Germany from west to east. The more days with snow, the higher and darker it gets.",
+    "This line crosses central Germany from west to east, over the Harz. The more days with snow, the higher and darker it gets.",
     `Add one every ${meta.rowStep} km from north to south and the country appears: ${before} snow days a year on average.`,
-    arrived ? dropped : "Thirty years later, the same lines.",
+    dropped,
     "Drag across the map to compare the two periods.",
   ];
 
@@ -92,11 +92,11 @@ export default function Poster() {
             <div className="caption-cell">
               {/* every caption, invisible and stacked, so the row is always as tall as the longest
                   one and the map doesn't jump when the caption changes */}
-              {[...captions, dropped].map((text, i) => (
+              {captions.map((text, i) => (
                 <p key={i} className="caption sizer" aria-hidden="true">{text}</p>
               ))}
               <AnimatePresence mode="wait">
-                <motion.p key={step === 2 ? `${step}-${arrived}` : step} className="caption" aria-live="polite"
+                <motion.p key={step} className="caption" aria-live="polite"
                   initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.35 }}>
                   {captions[step]}
                 </motion.p>
